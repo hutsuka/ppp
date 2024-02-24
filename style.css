@@ -1,0 +1,261 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* height: 100vh; */
+  background-color: #f0f0f0;
+
+}
+a{
+  display: block;
+}
+
+
+/* loader */
+
+
+
+.loader{
+  width: 400px;
+  height: 400px;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1.5s ease-out; /* opacityの変化にトランジションを追加 */
+}
+.loader h2{
+  color: #ce3d11;
+  font-size: 30px;
+}
+.loader span{
+  position: absolute;
+  border: 2px solid #0b0c0c;
+  width: 100%;
+  height: 100%;
+  animation: animate 6s linear infinite;
+}
+.loader span:nth-child(1){
+  border-radius:29% 71% 67% 33% / 20% 50% 50% 80% ;
+}
+.loader span:nth-child(2){
+  animation-direction: reverse;
+  border-radius: 58% 42% 48% 52% / 65% 40% 60% 35% ;
+}
+.loader span:nth-child(3){
+  animation-delay: 5s;
+  border-radius: 38% 62% 21% 79% / 20% 67% 33% 80% ;
+}
+
+.loaded{
+  opacity: 0;
+
+}
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+
+
+/* .container */
+.container{
+  position: relative;
+  max-width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  overflow: hidden; /* スクロールバーを隠す*/
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* opacityの変化にトランジションを追加 */
+  transition-delay: 1s; /* 遅延時間を設定 */
+}
+/* .loadedが追加されたらcontainerを表示 */
+.loader.loaded + .container {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+#canvas{
+width: 100vw;
+height: 100vh;
+}
+/* .newsBox */
+
+.newsBox{
+  display: flex;
+  position: absolute;
+  bottom: 50px;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+  line-height: 1;
+  padding: 0.5em 0;
+}
+
+.newsBox p{
+  display: inline-block;
+  font-size: 95px;
+  color: #dd462c;
+  line-height: 1;
+  white-space: nowrap;
+  font-weight: bold;
+  margin: 0;
+  animation-name: newsBox-animation;
+  animation-duration: 55s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes newsBox-animation{
+  from{
+    transform: translate(0%);
+  }
+  to{
+    transform: translate(-100%);
+  }
+}
+
+
+
+/*------------ miniCon1 -----------*/
+
+.miniCon{
+  position: relative;
+  display: block;
+  bottom: 480px;
+  left: calc(50% + 90px);
+  width: 400px;
+  text-align: center;
+  transform-origin: center center;
+  will-change: transform;
+  transform: translateZ(0) rotate(0deg);
+}
+.miniCon img{
+  width: 330px;
+  animation: rotateMiniCon 55s linear infinite;
+}
+@keyframes rotateMiniCon {
+  0% {
+    transform: translateZ(0) rotate(0deg);
+  }
+  100% {
+    transform: translateZ(0) rotate(360deg);
+  }
+}
+.miniCon p {
+  position: absolute;
+  font-size: 52px;
+  font-weight: bold;
+  color: #fdfdfd;
+  top: 138px;
+  left: 86px;
+}
+
+/****--------- miniCon2---------****/
+
+.miniCon2{
+  position: relative;
+  display: block;
+  bottom: 1229px;
+  left: calc(50% + 165px);
+  width: 268px;
+  text-align: center;
+  transform-origin: center center;
+}
+.miniCon2 img{
+  width: 290px;
+  animation: rotateMiniCon2 60s linear infinite;
+}
+@keyframes rotateMiniCon2{
+  0% {
+    transform: translateZ(0) rotate(360deg);
+  }
+  100% {
+    transform: translateZ(0) rotate(0deg);
+  }
+}
+.miniCon2 p {
+  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fdfdfd;
+  top: 123px;
+  left: 47px;
+}
+
+/****--------- miniCon3---------****/
+
+.miniCon3{
+  position: relative;
+  display: block;
+  bottom: 1291px;
+  left: calc(50% + 359px);
+  width: 200px;
+  text-align: center;
+  transform-origin: center center;
+}
+.miniCon3 img{
+  width: 232px;
+  animation: rotateMiniCon3 40s linear infinite;
+}
+
+@keyframes rotateMiniCon3{
+  0% {
+    transform: translateZ(0) rotate(0deg);
+  }
+  100% {
+    transform: translateZ(0) rotate(360deg);
+  }
+}
+.miniCon3 p {
+  position: absolute;
+  font-size: 37px;
+  font-weight: bold;
+  color: #fdfdfd;
+  top: 99px;
+  left: 27px;
+}
+
+/****--------- miniCon4---------****/
+.miniCon4 {
+  position: relative;
+  display: block;
+  bottom: 1291px;
+  left: calc(50% + 398px);
+  width: 500px;
+  text-align: center;
+  transform-origin: center center;
+}
+.miniCon4 img{
+  width: 315px;
+  animation:rotateMiniCon4 55s linear infinite;
+}
+@keyframes rotateMiniCon4{
+  0% {
+    transform: translateZ(0) rotate(360deg);
+  }
+  100% {
+    transform: translateZ(0) rotate(0deg);
+  }
+}
+.miniCon4 p {
+  position: absolute;
+  font-size: 52px;
+  font-weight: bold;
+  color: #fdfdfd;
+  top: 126px;
+  left: 177px;
+}
+.spins:hover{
+  color: #353434;
+transition: 0.4s;
+}
