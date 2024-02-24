@@ -51,9 +51,11 @@ const urls =[
   "envimage/gl_f.png",
   "envimage/gl_b.png",
 ];
-const loader = new THREE.CubeTextureLoader();
+// キューブマップテクスチャの作成
+const cubeTexture = new THREE.CubeTextureLoader().load(urls);
 
-scene.background = loader.load(urls);
+// シーンの背景にセット
+scene.background = cubeTexture;
 
 //controls
 const controls = new OrbitControls(camera,canvas);
