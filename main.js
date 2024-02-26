@@ -43,14 +43,24 @@ renderer.setPixelRatio(window.devicePixelRatio);
 
 
 //envimage  ３６０度の環境マッピング
-const urls =[
-  "public/gl_r.png",
-  "public/gl_l.png",
-  "public/gl_u.png",
-  "public/gl_d.png",
-  "public/gl_f.png",
-  "public/gl_b.png",
-];
+// const urls =[
+//   "public/gl_r.png",
+//   "public/gl_l.png",
+//   "public/gl_u.png",
+//   "public/gl_d.png",
+//   "public/gl_f.png",
+//   "public/gl_b.png",
+// ];
+import gl_r from './public/gl_r.png';
+import gl_l from './public/gl_l.png';
+import gl_u from './public/gl_u.png';
+import gl_d from './public/gl_d.png';
+import gl_f from './public/gl_f.png';
+import gl_b from './public/gl_b.png';
+
+const urls = [gl_r, gl_l, gl_u, gl_d, gl_f, gl_b];
+
+
 // キューブマップテクスチャの作成
 const cubeTexture = new THREE.CubeTextureLoader().load(urls);
 
