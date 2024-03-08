@@ -51,7 +51,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 //   "public/gl_f.png",
 //   "public/gl_b.png",
 // ];
-import gl_r from './public/gl_r.png';
+import gl_r from '/public/gl_r.png';//一度試しに
 import gl_l from './public/gl_l.png';
 import gl_u from './public/gl_u.png';
 import gl_d from './public/gl_d.png';
